@@ -17,7 +17,7 @@
   --white:#ffffff;--text:#4a3020;--text-light:#6b5040;
 }
 html{scroll-behavior:smooth;}
-body{font-family:'Heebo',sans-serif;direction:rtl;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+body{font-family:'Heebo',sans-serif;direction:rtl;background:var(--cream);color:var(--dark);overflow-x:hidden;line-height:1.6;}
 
 /* TOPBAR */
 #topbar{background:var(--dark);padding:9px 24px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.3);}
@@ -27,50 +27,46 @@ body{font-family:'Heebo',sans-serif;direction:rtl;background:var(--cream);color:
 
 /* NAV */
 nav{background:rgba(42,31,20,0.95);display:flex;justify-content:center;flex-wrap:wrap;border-bottom:2px solid var(--gold);position:sticky;top:37px;z-index:999;backdrop-filter:blur(10px);}
-nav a{color:rgba(245,239,230,0.75);text-decoration:none;padding:13px 18px;font-size:13px;display:block;transition:all 0.2s;position:relative;}
+nav a{color:rgba(245,239,230,0.75);text-decoration:none;padding:13px 18px;font-size:14px;display:block;transition:all 0.2s;position:relative;}
 nav a::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s;}
 nav a:hover{color:var(--gold);}
 nav a:hover::after{transform:scaleX(1);}
 
 /* HERO */
-#hero{position:relative;height:100vh;min-height:600px;max-height:800px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.hero-bg{
-  position:absolute;
-  inset:0;
-  background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1920&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+#hero{
+  position:relative;
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(rgba(42, 31, 20, 0.7), rgba(42, 31, 20, 0.8)), 
+              url('https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+  color:var(--white);
+  text-align:center;
+  padding:60px 20px;
 }
-/* SHADOW OVERLAY */
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(42, 31, 20, 0.55);
-}
+.hero-content{max-width:800px;z-index:2;}
+.hero-title{font-size:4rem;font-family:'Cormorant Garamond',serif;color:var(--gold);margin-bottom:15px;text-shadow:0 4px 10px rgba(0,0,0,0.5);}
+.hero-subtitle{font-size:1.4rem;font-weight:300;margin-bottom:25px;color:var(--cream);}
+.btn-primary{display:inline-block;background:var(--gold);color:var(--dark);padding:12px 28px;border-radius:4px;text-decoration:none;font-weight:700;transition:background 0.2s;}
+.btn-primary:hover{background:var(--gold-light);}
 
-.hero-content{
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: var(--white);
-  padding: 20px;
-}
-.hero-title{
-  font-size: 3.5rem;
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--gold);
-  margin-bottom: 12px;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.7);
-}
-.hero-subtitle{
-  font-size: 1.3rem;
-  max-width: 600px;
-  margin: 0 auto;
-  font-weight: 300;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-}
+/* SECTIONS */
+section{padding:80px 20px;max-width:1100px;margin:0 auto;}
+.section-title{font-size:2.2rem;font-family:'Cormorant Garamond',serif;color:var(--dark2);text-align:center;margin-bottom:15px;position:relative;}
+.section-title::after{content:'';display:block;width:50px;height:2px;background:var(--gold);margin:10px auto 0;}
+.section-subtitle{text-align:center;color:var(--text-light);margin-bottom:40px;}
+
+/* GRID LAYOUTS */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:25px;}
+.card{background:var(--white);padding:30px;border-radius:8px;border:1px solid var(--cream2);box-shadow:0 4px 15px rgba(0,0,0,0.03);transition:transform 0.2s;}
+.card:hover{transform:translateY(-5px);}
+.card i{font-size:2.5rem;color:var(--gold);margin-bottom:15px;display:inline-block;}
+.card h3{font-size:1.3rem;margin-bottom:10px;color:var(--dark2);}
+
+/* FOOTER */
+footer{background:var(--dark);color:var(--cream);text-align:center;padding:30px 20px;border-top:2px solid var(--gold);margin-top:60px;}
+footer p{font-size:14px;opacity:0.8;}
 </style>
 </head>
 <body>
@@ -78,7 +74,7 @@ nav a:hover::after{transform:scaleX(1);}
 <header>
   <!-- TOPBAR -->
   <div id="topbar">
-    <a href="tel:+972500000000"><i class="ti ti-phone"></i> צור קשר</a>
+    <a href="#contact"><i class="ti ti-phone"></i> צור קשר</a>
     <span>|</span>
     <a href="https://instagram.com" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i> באינסטגרם</a>
     <span>|</span>
@@ -101,13 +97,63 @@ nav a:hover::after{transform:scaleX(1);}
 <main>
   <!-- HERO SECTION -->
   <section id="hero">
-    <div class="hero-bg"></div>
     <div class="hero-content">
       <h1 class="hero-title">oren.greek</h1>
       <p class="hero-subtitle">מוזיקה יוונית, תרבות, אירועים וסיורים באתונה</p>
+      <a href="#contact" class="btn-primary">לפרטים והזמנות</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">אודות oren.greek</h2>
+    <p class="section-subtitle">מנגישים את התרבות והמוזיקה היוונית לקהל הישראלי</p>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text);">
+      <p>ברוכים הבאים לעולם של מוזיקה, קצב ותרבות יוונית אוטנטית. oren.greek מחבר בין חובבי המוזיקה היוונית בישראל לבין הלב הפועם של נגנים, זמרים ומוקדי התרבות ביוון ובאתונה.</p>
+    </div>
+  </section>
+
+  <!-- MUSIC & SERVICES -->
+  <section id="music">
+    <h2 class="section-title">מה אנחנו מציעים</h2>
+    <p class="section-subtitle">חוויות מוזיקליות ותרבותיות בהתאמה אישית</p>
+    
+    <div class="grid-3">
+      <div class="card" id="lectures">
+        <i class="ti ti-microphone"></i>
+        <h3>הרצאות וסדנאות</h3>
+        <p>הרצאות מרתקות על תולדות המוזיקה היוונית, סגנונות הלאיקו והרבטיקו, והסיפורים מאחורי השירים הגדולים.</p>
+      </div>
+
+      <div class="card" id="athens">
+        <i class="ti ti-map-pin"></i>
+        <h3>סיורים באתונה</h3>
+        <p>סיורי תרבות ומוזיקה מודרכים באתונה — טברנות מומלצות, מועדוני הופעות חיות ומקומות שרק המקומיים מכירים.</p>
+      </div>
+
+      <div class="card" id="events">
+        <i class="ti ti-music"></i>
+        <h3>אירועים ומופעים</h3>
+        <p>תקליטנות, ניהול אמנותי והפקת ערבים יווניים לאירועים פרטיים, מוסדיים וחגיגות שמחה.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">צור קשר</h2>
+    <p class="section-subtitle">נשמח לדבר ולתכנן את החוויה היוונית הבאה שלכם</p>
+    <div style="text-align: center;">
+      <a href="https://wa.me/972500000000" class="btn-primary" target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp"></i> שליחת הודעה ב-WhatsApp
+      </a>
     </div>
   </section>
 </main>
+
+<footer>
+  <p>© כל הזכויות שמורות ל-oren.greek | מוזיקה ותרבות יוונית</p>
+</footer>
 
 </body>
 </html>
