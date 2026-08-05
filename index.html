@@ -17,84 +17,80 @@
   --white:#ffffff;--text:#4a3020;--text-light:#6b5040;
 }
 html{scroll-behavior:smooth;}
-body{
-  font-family:'Heebo',sans-serif;
-  direction:rtl;
-  background:var(--cream);
-  color:var(--dark);
-  line-height:1.6;
-  overflow-x:hidden;
-}
+body{font-family:'Heebo',sans-serif;direction:rtl;background:var(--cream);color:var(--dark);overflow-x:hidden;}
 
 /* TOPBAR */
-#topbar{background:var(--dark);padding:10px 24px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.3);}
-#topbar a{color:var(--gold);font-size:14px;text-decoration:none;display:flex;align-items:center;gap:6px;font-weight:500;transition:opacity 0.2s;}
-#topbar a:hover{opacity:0.8;}
+#topbar{background:var(--dark);padding:9px 24px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.3);}
+#topbar a{color:var(--gold);font-size:13px;text-decoration:none;display:flex;align-items:center;gap:5px;font-weight:500;transition:opacity 0.2s;}
+#topbar a:hover{opacity:0.7;}
 #topbar span{color:rgba(201,168,76,0.3);font-size:12px;}
 
 /* NAV */
-nav{background:rgba(42,31,20,0.96);display:flex;justify-content:center;flex-wrap:wrap;border-bottom:2px solid var(--gold);position:sticky;top:41px;z-index:999;backdrop-filter:blur(10px);}
-nav a{color:rgba(245,239,230,0.85);text-decoration:none;padding:14px 20px;font-size:15px;display:block;transition:all 0.2s;position:relative;font-weight:500;}
+nav{background:rgba(42,31,20,0.95);display:flex;justify-content:center;flex-wrap:wrap;border-bottom:2px solid var(--gold);position:sticky;top:37px;z-index:999;backdrop-filter:blur(10px);}
+nav a{color:rgba(245,239,230,0.75);text-decoration:none;padding:13px 18px;font-size:13px;display:block;transition:all 0.2s;position:relative;}
 nav a::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s;}
 nav a:hover{color:var(--gold);}
 nav a:hover::after{transform:scaleX(1);}
 
-/* HERO SECTION */
-#hero{
-  position:relative;
-  min-height:80vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: linear-gradient(rgba(42, 31, 20, 0.65), rgba(42, 31, 20, 0.75)), 
-              url('https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
-  color:var(--white);
-  text-align:center;
-  padding:80px 20px;
+/* HERO */
+#hero{position:relative;height:100vh;min-height:600px;max-height:800px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.hero-content{max-width:850px;z-index:2;}
-.hero-title{font-size:4.2rem;font-family:'Cormorant Garamond',serif;color:var(--gold);margin-bottom:15px;text-shadow:0 4px 10px rgba(0,0,0,0.6);}
-.hero-subtitle{font-size:1.5rem;font-weight:300;margin-bottom:30px;color:var(--cream);}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);padding:14px 32px;border-radius:4px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all 0.2s;box-shadow:0 4px 15px rgba(201,168,76,0.3);}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+/* SHADOW OVERLAY */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 31, 20, 0.55);
+}
 
-/* SECTIONS */
-section.content-section{padding:90px 20px;max-width:1150px;margin:0 auto;}
-.section-title{font-size:2.6rem;font-family:'Cormorant Garamond',serif;color:var(--dark2);text-align:center;margin-bottom:15px;position:relative;}
-.section-title::after{content:'';display:block;width:60px;height:3px;background:var(--gold);margin:12px auto 0;}
-.section-subtitle{text-align:center;color:var(--text-light);margin-bottom:50px;font-size:1.15rem;}
-
-/* CARDS GRID */
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:30px;}
-.card{background:var(--white);padding:40px 30px;border-radius:8px;border:1px solid var(--cream2);box-shadow:0 4px 20px rgba(0,0,0,0.04);transition:transform 0.25s, box-shadow 0.25s;text-align:center;}
-.card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.08);}
-.card i{font-size:3.2rem;color:var(--gold);margin-bottom:20px;display:inline-block;}
-.card h3{font-size:1.5rem;margin-bottom:15px;color:var(--dark2);}
-.card p{color:var(--text);font-size:1.05rem;line-height:1.7;}
-
-/* FOOTER */
-footer{background:var(--dark);color:var(--cream);text-align:center;padding:35px 20px;border-top:2px solid var(--gold);margin-top:40px;}
-footer p{font-size:14px;opacity:0.85;}
+.hero-content{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  padding: 20px;
+}
+.hero-title{
+  font-size: 3.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gold);
+  margin-bottom: 12px;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.7);
+}
+.hero-subtitle{
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
 </style>
 </head>
 <body>
 
 <header>
-  <!-- TOPBAR WITH SOCIAL LINKS -->
+  <!-- TOPBAR -->
   <div id="topbar">
-    <a href="#contact"><i class="ti ti-phone"></i> צור קשר</a>
+    <a href="tel:+972500000000"><i class="ti ti-phone"></i> צור קשר</a>
     <span>|</span>
-    <a href="https://instagram.com" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i> אינסטגרם</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i> באינסטגרם</a>
     <span>|</span>
-    <a href="https://tiktok.com" target="_blank" rel="noopener"><i class="ti ti-brand-tiktok"></i> טיקטוק</a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener"><i class="ti ti-brand-tiktok"></i> בטיקטוק</a>
     <span>|</span>
-    <a href="https://facebook.com" target="_blank" rel="noopener"><i class="ti ti-brand-facebook"></i> פייסבוק</a>
+    <a href="https://facebook.com" target="_blank" rel="noopener"><i class="ti ti-brand-facebook"></i> בפייסבוק</a>
   </div>
 
-  <!-- MAIN NAVIGATION -->
+  <!-- NAV -->
   <nav>
     <a href="#about">אודות</a>
-    <a href="#services">מה אנחנו מציעים</a>
+    <a href="#music">מוזיקה יוונית</a>
     <a href="#lectures">הרצאות וסדנאות</a>
     <a href="#athens">סיורים באתונה</a>
     <a href="#events">אירועים ומופעים</a>
@@ -105,65 +101,13 @@ footer p{font-size:14px;opacity:0.85;}
 <main>
   <!-- HERO SECTION -->
   <section id="hero">
+    <div class="hero-bg"></div>
     <div class="hero-content">
       <h1 class="hero-title">oren.greek</h1>
       <p class="hero-subtitle">מוזיקה יוונית, תרבות, אירועים וסיורים באתונה</p>
-      <a href="#contact" class="btn-primary"><i class="ti ti-send"></i> לפרטים והזמנות</a>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section id="about" class="content-section">
-    <h2 class="section-title">אודות oren.greek</h2>
-    <p class="section-subtitle">מנגישים את התרבות והמוזיקה היוונית לקהל הישראלי</p>
-    <div style="text-align: center; max-width: 850px; margin: 0 auto; color: var(--text); font-size: 1.15rem; line-height: 1.8;">
-      <p>ברוכים הבאים לעולם של מוזיקה, קצב ותרבות יוונית אותנטית. oren.greek מחבר בין חובבי המוזיקה היוונית בישראל לבין הלב הפועם של נגנים, זמרים ומוקדי התרבות ביוון ובאתונה. מטרתנו היא לספק חוויות בלתי נשכחות — מהסברים ותרגומים יומיים של שירים ועד להדרכת סיורים אישיים בטברנות המסתוריות ביותר של אתונה.</p>
-    </div>
-  </section>
-
-  <!-- SERVICES GRID -->
-  <section id="services" class="content-section" style="background: var(--cream2); max-width: 100%;">
-    <div style="max-width: 1150px; margin: 0 auto;">
-      <h2 class="section-title">מה אנחנו מציעים</h2>
-      <p class="section-subtitle">חוויות מוזיקליות ותרבותיות בהתאמה אישית</p>
-      
-      <div class="grid-3">
-        <div class="card" id="lectures">
-          <i class="ti ti-microphone"></i>
-          <h3>הרצאות וסדנאות</h3>
-          <p>הרצאות מרתקות וסדנאות עומק על תולדות המוזיקה היוונית, התפתחות סגנונות הלאיקו והרבטיקו, והסיפורים המרתקים מאחורי השירים הגדולים שכולנו אוהבים.</p>
-        </div>
-
-        <div class="card" id="athens">
-          <i class="ti ti-map-pin"></i>
-          <h3>סיורים באתונה</h3>
-          <p>סיורי תרבות, מוזיקה וקולינריה מודרכים בסמטאות אתונה — הגעה לטברנות האותנטיות, מועדוני הופעות חיות פופולריים ומקומות נסתרים שרק המקומיים מכירים.</p>
-        </div>
-
-        <div class="card" id="events">
-          <i class="ti ti-music"></i>
-          <h3>אירועים ומופעים</h3>
-          <p>תקליטנות, ניהול אמנותי והפקת ערבים יווניים לאירועים פרטיים, מוסדיים וחגיגות שמחה. שילוב מדויק של מקצבים יווניים עכשוויים וקלאסיקות אלמותיות.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="content-section">
-    <h2 class="section-title">צור קשר</h2>
-    <p class="section-subtitle">נשמח לדבר ולתכנן את החוויה היוונית הבאה שלכם</p>
-    <div style="text-align: center;">
-      <a href="https://wa.me/972500000000" class="btn-primary" target="_blank" rel="noopener">
-        <i class="ti ti-brand-whatsapp"></i> שליחת הודעה ב-WhatsApp
-      </a>
     </div>
   </section>
 </main>
-
-<footer>
-  <p>© כל הזכויות שמורות ל-oren.greek | מוזיקה ותרבות יוונית</p>
-</footer>
 
 </body>
 </html>
