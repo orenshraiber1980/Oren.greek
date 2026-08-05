@@ -77,8 +77,7 @@ section{padding:60px 24px;}
 /* SERVICES */
 #services{background:var(--cream2);}
 .srv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:960px;margin:0 auto;}
-.srv-card{background:var(--white);border:1px solid rgba(139,90,43,0.15);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(90,58,26,0.06);transition:all 0.3s;cursor:pointer;}
-.srv-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(90,58,26,0.14);border-color:rgba(201,168,76,0.5);}
+.srv-card-top{height:180px;display:flex;align-items:center;justify-content:center;font-size:72px;position:relative;overflow:hidden;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3));}.srv-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(90,58,26,0.14);border-color:rgba(201,168,76,0.5);}
 .srv-card-top{height:160px;display:flex;align-items:center;justify-content:center;font-size:44px;position:relative;overflow:hidden;}
 .srv-card-top::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .srv-body{padding:20px 18px 16px;}
@@ -131,7 +130,7 @@ section{padding:60px 24px;}
 .pay-btn-bank:hover{background:var(--gold);color:#1a0e00;}
 <div class="srv-card">
   <div class="sc-placeholder" style="background:linear-gradient(135deg,#1a2810,#2a5020);">🎵</div>
-  <div class="srv-body">
+  <div class="srv-card-top" style="background:linear-gradient(135deg,#1a2810,#2a6020);">🎵</div>
     <span class="srv-num">06</span>
     <h3>תרגומי שירים יווניים</h3>
     <p>תרגום מקצועי של שירים יווניים לעברית עם הסבר על המשמעות, הרגש והסיפור מאחורי כל שיר.</p>
@@ -141,7 +140,7 @@ section{padding:60px 24px;}
 
 <div class="srv-card">
   <div class="sc-placeholder" style="background:linear-gradient(135deg,#1a0a28,#4a1060);">🎬</div>
-  <div class="srv-body">
+ <div class="srv-card-top" style="background:linear-gradient(135deg,#1a0a28,#6a1080);">🎬</div>
     <span class="srv-num">07</span>
     <h3>קליפים לאירועים מיוחדים</h3>
     <p>הכנת קליפים מרגשים לימי הולדת, בר מצווה, אירועי חברה ועוד — כולל שירים יווניים מתורגמים לעברית.</p>
@@ -151,7 +150,7 @@ section{padding:60px 24px;}
 
 <div class="srv-card">
   <div class="sc-placeholder" style="background:linear-gradient(135deg,#0a1a28,#104060);">📱</div>
-  <div class="srv-body">
+  <div class="srv-card-top" style="background:linear-gradient(135deg,#0a1a38,#1060a0);">📱</div>
     <span class="srv-num">08</span>
     <h3>סושיאל לזמרים וטברנות בארץ</h3>
     <p>ניהול תוכן ברשתות חברתיות לזמרים יווניים ולטברנות בישראל — יצירת תוכן, פוסטים ואסטרטגיה דיגיטלית.</p>
@@ -161,7 +160,7 @@ section{padding:60px 24px;}
 
 <div class="srv-card">
   <div class="sc-placeholder" style="background:linear-gradient(135deg,#1a1005,#503010);">✈️</div>
-  <div class="srv-body">
+ <div class="srv-card-top" style="background:linear-gradient(135deg,#1a1005,#704530);">✈️</div>
     <span class="srv-num">09</span>
     <h3>תוכן לטיולים בעולם</h3>
     <p>יצירת תוכן מקצועי לטיולים — סרטונים, פוסטים וסיפורי מסע עם דגש על תרבות, מוזיקה ואוכל מקומי.</p>
@@ -247,7 +246,7 @@ footer p{font-size:11px;color:rgba(245,239,230,0.35);}
   <a href="#shirts">חולצות</a>
   <a href="#about">אודות</a>
   <a href="#contact">יצירת קשר</a>
-</nav>
+<div class="srv-card-top" style="background:linear-gradient(135deg,#1a0e00,#5a2510);">🎭</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -261,7 +260,7 @@ footer p{font-size:11px;color:rgba(245,239,230,0.35);}
       </button>
       <div class="mpill" id="mpill"><div class="mdot"></div><span>♪ Τσιφτετέλι</span></div>
       <div class="viz" id="viz">
-        <div class="vb"></div><div class="vb"></div><div class="vb"></div>
+        <div class="srv-card-top" style="background:linear-gradient(135deg,#0a1628,#1a4a6c);">🌊</div>
         <div class="vb"></div><div class="vb"></div><div class="vb"></div><div class="vb"></div>
       </div>
     </div>
@@ -276,7 +275,7 @@ footer p{font-size:11px;color:rgba(245,239,230,0.35);}
       </div>
     </div>
   </div>
-</section>
+<div class="srv-card-top" style="background:linear-gradient(135deg,#1a0e28,#5a1a7c);">🎤</div>
 
 <!-- SERVICES -->
 <section id="services">
@@ -291,7 +290,7 @@ footer p{font-size:11px;color:rgba(245,239,230,0.35);}
         <span class="srv-num">01</span>
         <h3>הפקת אירועי טברנה בישראל</h3>
         <p>אני מביא את האמנים הטובים ביותר ששרים יוונית בישראל / מיוון — זמרים, נגני בוזוקי, קלידנים. אחראי על הליין-אפ, האקססוריז והאווירה.</p>
-        <div class="contact-inline">
+       <div class="srv-card-top" style="background:linear-gradient(135deg,#0a2010,#1a6040);">🎵</div>
           📧 <a href="mailto:oren.greek@gmail.com">oren.greek@gmail.com</a><br>
           📞 <a href="tel:054-3302195">054-3302195</a>
         </div>
@@ -303,7 +302,7 @@ footer p{font-size:11px;color:rgba(245,239,230,0.35);}
       <div class="srv-card-top" style="background:linear-gradient(135deg,#0a1628,#1a3a5c);">🌊</div>
       <div class="srv-body">
         <span class="srv-num">02</span>
-        <h3>תיאום טברנה — אתונה ופיראוס</h3>
+       <div class="srv-card-top" style="background:linear-gradient(135deg,#201505,#704520);">🗺️</div>
         <p>תיאום אישי לטברנות הטובות ביותר באתונה ופיראוס.</p>
         <table class="price-table">
           <tr><td>לאדם (טברנה)</td><td>50 ₪</td></tr>
