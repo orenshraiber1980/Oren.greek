@@ -575,3 +575,149 @@ function handleSubmit(){
 </script>
 </body>
 </html>
+<!-- START: סקציית שירותים מיוחדים - Oren Greek -->
+<style>
+  .greek-services-section {
+    background: #2a1f14;
+    color: #f5efe6;
+    padding: 60px 20px;
+    direction: rtl;
+    font-family: 'Heebo', sans-serif;
+    border-top: 2px solid #c9a84c;
+    border-bottom: 2px solid #c9a84c;
+  }
+
+  .greek-services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .greek-services-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #c9a84c;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .greek-services-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #f0e8d8;
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+
+  .greek-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .greek-service-card {
+    background: #3a2510;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .greek-service-card:hover {
+    transform: translateY(-5px);
+    border-color: #c9a84c;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+
+  .greek-service-icon {
+    font-size: 2.5rem;
+    color: #c9a84c;
+    margin-bottom: 15px;
+  }
+
+  .greek-service-card h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+
+  .greek-service-card p {
+    font-size: 0.95rem;
+    color: #f5efe6;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.85;
+  }
+
+  .greek-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: background 0.25s ease, transform 0.2s ease;
+  }
+
+  .greek-whatsapp-btn:hover {
+    background: #1eb956;
+    transform: scale(1.02);
+  }
+</style>
+
+<section class="greek-services-section" id="services">
+  <div class="greek-services-container">
+    <h2 class="greek-services-title">שירותים מיוחדים יצירה ועריכה</h2>
+    <p class="greek-services-subtitle">מביאים את נשמת המוזיקה היוונית והתוכן המקצועי לאירוע או לפרויקט שלך</p>
+
+    <div class="greek-services-grid">
+      
+      <!-- כרטיס 1: תרגום שירים -->
+      <div class="greek-service-card">
+        <div>
+          <div class="greek-service-icon"><i class="ti ti-language"></i></div>
+          <h3>תרגום ותעתיק שירים</h3>
+          <p>תרגום מעמיק ומדויק של שירים מיוונית לעברית, כולל תעתיק פונטי מושלם לשירה והסברים על הרקע של השיר.</p>
+        </div>
+        <!-- החלף את NUMBER במספר הווואטסאפ שלך (למשל: 972501234567) -->
+        <a href="https://wa.me/NUMBER?text=%D7%94%D7%99%D7%99%20%D7%90%D7%95%D7%A8%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%9D%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%AA%D7%A8%D7%90%D7%95%D7%9D%20%D7%A9%D7%99%D7%A8%D7%99%D7%9D" class="greek-whatsapp-btn" target="_blank">
+          <i class="ti ti-brand-whatsapp"></i> להזמנה בוואטסאפ
+        </a>
+      </div>
+
+      <!-- כרטיס 2: עריכת סרטונים -->
+      <div class="greek-service-card">
+        <div>
+          <div class="greek-service-icon"><i class="ti ti-video"></i></div>
+          <h3>עריכת סרטונים ותוכן</h3>
+          <p>עריכת וידאו מקצועית לרשתות החברתיות (TikTok, Reels, Shorts), יצירת הוקים ממכרים ושילוב כתוביות מוזיקליות.</p>
+        </div>
+        <a href="https://wa.me/NUMBER?text=%D7%94%D7%99%D7%99%20%D7%90%D7%95%D7%A8%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A0%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%91%D7%A2%D7%A8%D7%99%D7%9B%D7%AA%20%D7%A1%D7%A8%D7%96%D7%95%D7%A0%D7%99%D7%9D%20%D7%95%D7%AA%D7%95%D7%9B%D7%9F" class="greek-whatsapp-btn" target="_blank">
+          <i class="ti ti-brand-whatsapp"></i> להזמנה בוואטסאפ
+        </a>
+      </div>
+
+      <!-- כרטיס 3: קליפים לאירועים -->
+      <div class="greek-service-card">
+        <div>
+          <div class="greek-service-icon"><i class="ti ti-movie"></i></div>
+          <h3>קליפים לאירועים מיוחדים</h3>
+          <p>יצירת קליפים מרגשים ומותאמים אישית לחתונות, ימי הולדת ואירועים יווניים – בשילוב המוזיקה והברכות הנכונות.</p>
+        </div>
+        <a href="https://wa.me/NUMBER?text=%D7%94%D7%99%D7%99%20%D7%90%D7%95%D7%A8%D7%9F%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%97%20%D7%A7%D7%9C%D7%99%D7%A3%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2%20%D7%9E%D7%A9%D7%95%D7%97%D7%93" class="greek-whatsapp-btn" target="_blank">
+          <i class="ti ti-brand-whatsapp"></i> להזמנה בוואטסאפ
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- END: סקציית שירותים מיוחדים -->
